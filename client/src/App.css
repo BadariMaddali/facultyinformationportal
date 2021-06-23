@@ -1,0 +1,139 @@
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.the-app {
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  cursor: default;
+}
+.logo {
+  width: 105px;
+  height: 85px;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+html {
+  font-family: "Roboto", "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #680000;
+  padding: 15px;
+  color: #333;
+}
+
+.header h1 {
+  font-size: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: dodgerblue;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.navbar .links {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .loggedInContainer {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar button {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.navbar h1 {
+  text-align: right;
+  margin-right: 10px;
+  color: white;
+  font-weight: lighter;
+}
+
+/* LOGIN */
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+}
+
+.viewContainer {
+  align-items: center;
+  width: 50%;
+  margin-top: 20px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.loginContainer input,
+button {
+  width: 200px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
+}
+
+.loginContainer button {
+  background-color: #680000;
+  color: white;
+}
+
+.loginContainer input {
+  border: 2px solid #680000;
+}
