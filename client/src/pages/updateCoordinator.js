@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
+import {Helmet} from 'react-helmet';
 
 export default function UpdateCoordinator(){
 
@@ -54,6 +55,9 @@ export default function UpdateCoordinator(){
       };
 
     return <div className="viewContainer">
+      <Helmet>
+        <title>Update Coordinator</title>
+      </Helmet>
         <h1>Update Coordinator</h1>
         <h2 className="text-danger form-text">{responseError}</h2>
         

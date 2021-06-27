@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {Helmet} from 'react-helmet';
 
 export default function FacultyProfile({ history }) {
   const [facultyData, setFacultyData] = useState({
@@ -53,7 +54,10 @@ export default function FacultyProfile({ history }) {
 
   return (
     <div className="viewContainer">
-      <h1>Update Faculty!</h1>
+      <Helmet>
+        <title>Update Profile</title>
+      </Helmet>
+      <h1>Update Profile!</h1>
       <h2 className="text-danger form-text">{responseError}</h2>
 
       <form onSubmit={(e) => onSubmit(e)}>

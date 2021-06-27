@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 export default function AddConference({history}){
 
@@ -89,12 +90,8 @@ export default function AddConference({history}){
           journalData.facultyName !== "" &&
           journalData.title !== "" &&
           journalData.year !== "" &&
-          journalData.issueNo !== "" &&
           journalData.proceedingsName !== "" &&
-          journalData.institutionName !== "" &&
-          journalData.issnNo !== "" &&
-          journalData.doi !== "" &&
-          journalData.indexing !== ""
+          journalData.institutionName !== ""
         ) {
     
             await axios
@@ -119,6 +116,9 @@ export default function AddConference({history}){
 
       return (
         <div className="viewContainer">
+          <Helmet>
+            <title>Add Conference</title>
+          </Helmet>
           <h1>Add Conference</h1>
           <h2 className="text-danger form-text">{responseError}</h2>
     
@@ -286,9 +286,7 @@ export default function AddConference({history}){
                 className="form-control"
               />
     
-              {journalDataError.issueNo && (
-                <p className="text-danger form-text">Issue Number is Required</p>
-              )}
+              
             </div>
     
             <div className="mb-3">
@@ -306,10 +304,7 @@ export default function AddConference({history}){
                 }}
                 className="form-control"
               />
-    
-              {journalDataError.issnNo && (
-                <p className="text-danger form-text">ISSN Number is Required</p>
-              )}
+
             </div>
     
             <div className="mb-3">
@@ -327,10 +322,6 @@ export default function AddConference({history}){
                 }}
                 className="form-control"
               />
-    
-              {journalDataError.doi && (
-                <p className="text-danger form-text">DOI is Required</p>
-              )}
             </div>
     
       <div className="mb-3">
@@ -354,10 +345,6 @@ export default function AddConference({history}){
           <option value="IEEE/IET">IEEE/IET</option>
 
         </select>
-
-          {journalDataError.indexing && (
-            <p className="text-danger form-text">Indexing is Required</p>
-          )}
       </div>
     
             <div className="mb-3">
@@ -386,22 +373,14 @@ export default function AddConference({history}){
     
             <div className="mb-3">
               <label className="form-label">Enter Publisher Name</label> <br/>
-              <select
-          value={journalData.publisherName}
-          onChange={(e) => setJournalData({ ...journalData, publisherName: e.target.value })}
-          onBlur={(e) => {
-            if (e.target.value !== "") {
-              setJournalDataError({ ...journalDataError, publisherName: false });
-            }
-          }}
-        >
-          <option value="">SELECT</option>
-          <option value="IEEE/IET">IEEE/IET</option>
-          <option value="Springer">Springer</option>
-          <option value="DOI">DOI</option>
-
-
-        </select>
+              <input
+                type="text"
+                value={journalData.publisherName}
+                onChange={(e) =>
+                  setJournalData({ ...journalData, publisherName: e.target.value })
+                }
+                className="form-control"
+              />
             </div>
     
             <button type="submit" className="btn btn-primary">

@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import ReactToPrint from "react-to-print";
+import {Helmet} from 'react-helmet';
 
 export default function Coordinator({match}) {
   const componentRef = useRef();
-
   return (
     <div>
       <ReactToPrint
@@ -15,8 +15,6 @@ export default function Coordinator({match}) {
     </div>
   );
 }
-
-
 class CoordinatorInner extends React.Component {
 
   constructor(props) {
@@ -31,7 +29,6 @@ class CoordinatorInner extends React.Component {
       }
     };
   }
-
   getCoordinatorSummary = async () => {
     await axios
       .get("http://localhost:3001/coordinator/getCoordinatorSummary", {
@@ -54,11 +51,12 @@ class CoordinatorInner extends React.Component {
   componentDidMount() {
     this.getCoordinatorSummary();
   }
-
-
   render({coordSummary} = this.state){
     return (
       <div>
+        <Helmet>
+          <title>Faculty Information Portal</title>
+        </Helmet>
         <br />
         <h1>Welcome, {coordSummary.department.toUpperCase()}  Coordinator!</h1>
         <br />
@@ -69,13 +67,11 @@ class CoordinatorInner extends React.Component {
             </tr>
           </thead>
           <tbody>
-
           <tr>
             <th scope="row">
               <h1> No.of Faculty : {coordSummary.facultyCount}</h1>
             </th>
           </tr>
-
           <tr>
             <th scope="row">
               <h1> No.of Journals : {coordSummary.journalsCount}</h1>
@@ -86,7 +82,6 @@ class CoordinatorInner extends React.Component {
               <h1> No.of Conferences : {coordSummary.conferencesCount}</h1>
             </th>
           </tr>
-
           </tbody>
         </table>
       </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import {Helmet} from 'react-helmet';
 
 export default function ViewCoordinators({history}) {
   const [faculty, setFaculty] = useState([]);
@@ -44,6 +45,9 @@ export default function ViewCoordinators({history}) {
 
   return (
     <div>
+      <Helmet>
+        <title>View Coordinators</title>
+      </Helmet>
       <h1>View Coordinators</h1>
 
       <h2 className="text-danger form-text">{responseError}</h2>

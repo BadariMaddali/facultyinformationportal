@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import {useHistory} from 'react-router-dom';
+import {Helmet} from 'react-helmet';
 
 export default function AddCoordinator() {
 
@@ -60,6 +61,9 @@ export default function AddCoordinator() {
 
   return (
     <div className="viewContainer">
+      <Helmet>
+            <title>Add Coordinator</title>
+          </Helmet>
       <h1>Add Coordinator</h1>
 
       <h2 className="text-danger form-text">{responseError}</h2>

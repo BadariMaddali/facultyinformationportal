@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import ReactToPrint from "react-to-print";
+import {Helmet} from 'react-helmet';
 
 export default function PublicationsOnIndex({ match }) {
   const componentRef = useRef();
@@ -72,6 +73,9 @@ class PubsOnIndex extends React.Component {
   render({ conferences, responseError, journals, index, indexError, toShow } = this.state) {
     return (
       <div>
+        <Helmet>
+          <title>Publications based on Index</title>
+        </Helmet>
         <div className="mb-3">
           <label className="form-label">Select Index</label> <br />
           <select
@@ -140,7 +144,7 @@ class PubsOnIndex extends React.Component {
 
 {conferences && (
   <div>
-    <table className="table table-bordered">
+    <table className="table table-bordered" style={{fontSize:"11px"}}>
       <thead>
         <tr>
           <th scope="col">Sno</th>
@@ -211,7 +215,7 @@ class PubsOnIndex extends React.Component {
 
             {journals && (
               <div>
-                <table className="table table-bordered">
+                <table className="table table-bordered" style={{fontSize:"13px"}}>
                   <thead>
                     <tr>
                       <th scope="col">Sno</th>

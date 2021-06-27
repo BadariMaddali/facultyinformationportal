@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {parse} from "papaparse";
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 export default function UploadJournals({history}) {
 
@@ -26,6 +27,9 @@ export default function UploadJournals({history}) {
 
   return (
     <div>
+      <Helmet>
+        <title>Upload Journals</title>
+      </Helmet>
       <h1>Upload Journals</h1> <br/>
       <div
         style={{ borderStyle: "dashed", padding: "30px 10px", textAlign:"center"  }}

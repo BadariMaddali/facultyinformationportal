@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import axios from 'axios';
 import ReactToPrint from "react-to-print";
+import {Helmet} from 'react-helmet';
 
 export default function ViewConferences({history}) {
   const componentRef = useRef();
@@ -51,13 +52,16 @@ class ViewConferencesInner extends React.Component {
   render({journals, responseError} = this.state, {history} = this.props ){
     return (
       <div>
+        <Helmet>
+          <title>View Conferences</title>
+        </Helmet>
         <h1>View Conferences</h1>
   
         <h2 className="text-danger form-text">{responseError}</h2>
   
         {journals && (
           <div>
-            <table className="table table-bordered" style={{fontSize:"13px"}} >
+            <table className="table table-bordered" style={{fontSize:"11px"}} >
               <thead>
                 <tr>
                   <th scope="col">Sno</th>

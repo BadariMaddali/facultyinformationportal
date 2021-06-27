@@ -1,15 +1,17 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import {Helmet} from 'react-helmet';
 
 export default function AdminArea() {
   let history = useHistory();
 
   return (
     <div>
+      <Helmet>
+        <title>Faculty Information Portal</title>
+      </Helmet>
       <br />
-
       <h1>Welcome, Admin!</h1>
-
       <br />
       <table class="table table-bordered">
         <thead class="thead-dark">
@@ -46,7 +48,6 @@ export default function AdminArea() {
           </tr>
         </tbody>
       </table>
-
       <div></div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import {Helmet} from 'react-helmet';
 
 export default function AddFaculty() {
   let history = useHistory();
@@ -87,6 +88,9 @@ export default function AddFaculty() {
 
   return (
     <div className="viewContainer">
+      <Helmet>
+          <title>Add Faculty</title>
+      </Helmet>
       <h1>Add Faculty</h1>
 
       <h2 className="text-danger form-text">{responseError}</h2>

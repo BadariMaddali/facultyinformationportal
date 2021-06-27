@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import ReactToPrint from "react-to-print";
+import {Helmet} from 'react-helmet';
 
 export default function PublicationsOnYear({ match }) {
   const componentRef = useRef();
@@ -74,6 +75,9 @@ class PubsOnYear extends React.Component {
   ) {
     return (
       <div>
+        <Helmet>
+          <title>Publications based on Year</title>
+        </Helmet>
         <div className="mb-3">
           <label className="form-label">Select Academic Year</label> <br />
           <select
@@ -142,7 +146,7 @@ class PubsOnYear extends React.Component {
 
 {conferences && (
   <div>
-    <table className="table table-bordered">
+    <table className="table table-bordered" style={{fontSize:"13px"}}>
       <thead>
         <tr>
           <th scope="col">Sno</th>
@@ -214,7 +218,7 @@ class PubsOnYear extends React.Component {
 
 {journals && (
   <div>
-    <table className="table table-bordered">
+    <table className="table table-bordered" style={{fontSize:"13px"}}>
       <thead>
         <tr>
           <th scope="col">Sno</th>

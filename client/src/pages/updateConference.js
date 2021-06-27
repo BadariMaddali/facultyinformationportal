@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 export default function UpdateConference({ history }) {
   let { id } = useParams();
@@ -62,7 +63,10 @@ export default function UpdateConference({ history }) {
 
   return (
     <div className="viewContainer">
-      <h1>Update Journal!</h1>
+      <Helmet>
+        <title>Update Conference</title>
+      </Helmet>
+      <h1>Update Conference!</h1>
       <h2 className="text-danger form-text">{responseError}</h2>
 
       <form onSubmit={(e) => onSubmit(e)}>

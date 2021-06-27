@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import ReactToPrint from "react-to-print";
+import {Helmet} from 'react-helmet';
 
 export default function Faculty({match}) {
   const componentRef = useRef();
@@ -15,10 +16,7 @@ export default function Faculty({match}) {
     </div>
   );
 }
-
 class FacultyInner extends React.Component {
-
-
   constructor(props) {
     super(props);
     this.state = {
@@ -30,9 +28,6 @@ class FacultyInner extends React.Component {
       }
     };
   }
-
-
-
  getFacSummary = async () => {
     await axios
       .get("http://localhost:3001/faculty/getFacSummary", {
@@ -51,16 +46,15 @@ class FacultyInner extends React.Component {
 
     console.log("weber");
   };
-
   componentDidMount() {
     this.getFacSummary();
   }
-
-  
-
 render({facSummary} = this.state){
   return (
     <div>
+      <Helmet>
+        <title>Faculty Information Portal</title>
+      </Helmet>
       <br />
       <h1>Welcome {facSummary.facultyName}!</h1>
       <br />

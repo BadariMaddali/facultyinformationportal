@@ -1,6 +1,7 @@
 import React from "react";
 import {parse} from "papaparse";
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 export default function UploadConferences({history}) {
 
@@ -26,6 +27,9 @@ export default function UploadConferences({history}) {
 
   return (
     <div>
+      <Helmet>
+        <title>Upload Conferences</title>
+      </Helmet>
       <h1>Upload Conferences</h1> <br/>
       <div
         style={{ borderStyle: "dashed", padding: "30px 10px", textAlign:"center"  }}

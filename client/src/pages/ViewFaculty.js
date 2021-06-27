@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import {Helmet} from 'react-helmet';
 
 export default function ViewFaculty() {
   let history = useHistory();
@@ -44,6 +45,9 @@ export default function ViewFaculty() {
 
   return (
     <div>
+      <Helmet>
+        <title>View Faculty</title>
+      </Helmet>
       <h1>View Faculty</h1>
 
       <h2 className="text-danger form-text">{responseError}</h2>

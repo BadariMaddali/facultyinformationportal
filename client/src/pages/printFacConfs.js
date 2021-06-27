@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import ReactToPrint from "react-to-print";
+import {Helmet} from 'react-helmet';
 
 export default function PrintFacConfs({match}) {
   const componentRef = useRef();
@@ -76,13 +77,16 @@ class ViewCoordConferences extends React.Component {
 
     return (
       <div>
+        <Helmet>
+          <title>Publications</title>
+        </Helmet>
         <h1>Conferences</h1>
 
         <h2 className="text-danger form-text">{responseError}</h2>
 
         {conferences && (
           <div>
-            <table className="table table-bordered" style={{fontSize:"13px"}}>
+            <table className="table table-bordered" style={{fontSize:"11px"}}>
               <thead>
                 <tr>
                   <th scope="col">Sno</th>
@@ -158,8 +162,7 @@ class ViewCoordConferences extends React.Component {
           <th scope="col">Faculty Name</th>
           <th scope="col">Title</th>
           <th scope="col">Year</th>
-          <th scope="col">Name of Proceedings</th>
-          <th scope="col">Institution Organized</th>
+          <th scope="col">Journals Name</th>
           <th scope="col">Vol No</th>
           <th scope="col">Issue No</th>
           <th scope="col">Issn No</th>
@@ -180,8 +183,7 @@ class ViewCoordConferences extends React.Component {
                 <td>{conference.facultyName}</td>
                 <td>{conference.title}</td>
                 <td>{conference.year}</td>
-                <td>{conference.proceedingsName}</td>
-                <td>{conference.institutionName}</td>
+                <td>{conference.journalsName}</td>
                 <td>{conference.volNo}</td>
                 <td>{conference.issueNo}</td>
                 <td>{conference.issnNo}</td>

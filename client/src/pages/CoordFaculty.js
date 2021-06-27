@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {Helmet} from 'react-helmet';
 
 export default function CoordFaculty({history}) {
   const [faculty, setFaculty] = useState([]);
@@ -27,7 +28,9 @@ export default function CoordFaculty({history}) {
 
   return (
     <div>
-      
+      <Helmet>
+        <title>Faculty</title>
+      </Helmet>
       <h1>Faculty of Your Department</h1>
 
       <h2 className="text-danger form-text">{responseError}</h2>

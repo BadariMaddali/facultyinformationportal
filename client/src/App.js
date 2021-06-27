@@ -194,7 +194,10 @@ export default function App() {
               {authState.status && <a href="/login"  style={{color:"white", textDecoration:"none"}} onClick={logout}>Logout</a>}
 
             </div>
-          </div> */}
+          </div>
+          <div className="footer center">
+            <p>All rights reserved. 2021 &copy; | VASIREDDY VENKATADRI INSTITUTE OF TECHNOLOGY</p>
+            </div> */}
 
           <div className="col-10">
 
@@ -234,14 +237,15 @@ export default function App() {
           </div>
           </div>    
 
-          </div>
+          </div >
 
           </div>
-        
+          
         </Router>
       </AuthContext.Provider>
     </div>
-
+    
    </div>
+   
   );
 }

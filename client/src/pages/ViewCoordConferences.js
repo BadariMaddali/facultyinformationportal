@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import axios from 'axios';
 import ReactToPrint from 'react-to-print';
+import {Helmet} from 'react-helmet';
 
 
 export default function PrintConferences () {
@@ -56,13 +57,16 @@ class ViewCoordConferences extends React.Component{
     // return <div>Weber</div>
 
        return  <div>
+         <Helmet>
+        <title>Conferences</title>
+      </Helmet>
       <h1>View Conferences</h1>
 
       <h2 className="text-danger form-text">{responseError}</h2>
 
       {journals && (
         <div>
-          <table className="table table-bordered">
+          <table className="table table-bordered" style={{fontSize:"13px"}}>
             <thead>
               <tr>
                 <th scope="col">Sno</th>

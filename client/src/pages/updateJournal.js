@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 export default function UpdateJournal({ history }) {
   let { id } = useParams();
@@ -61,6 +62,9 @@ export default function UpdateJournal({ history }) {
 
   return (
     <div className="viewContainer">
+      <Helmet>
+        <title>Update Journal</title>
+      </Helmet>
       <h1>Update Journal!</h1>
       <h2 className="text-danger form-text">{responseError}</h2>
 

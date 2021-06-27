@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import {Helmet} from 'react-helmet';
 
 export default function AddJournal({ history }) {
   const [journalData, setJournalData] = useState({
@@ -80,9 +81,8 @@ export default function AddJournal({ history }) {
       journalData.title !== "" &&
       journalData.year !== "" &&
       journalData.issueNo !== "" &&
-      journalData.issnNo !== "" &&
-      journalData.doi !== "" &&
-      journalData.indexing !== ""
+      journalData.issnNo !== ""
+      
     ) {
 
         await axios
@@ -107,6 +107,9 @@ export default function AddJournal({ history }) {
 
   return (
     <div className="viewContainer">
+      <Helmet>
+        <title>Add Journal</title>
+      </Helmet>
       <h1>Add Journal</h1>
       <h2 className="text-danger form-text">{responseError}</h2>
 
@@ -292,10 +295,6 @@ export default function AddJournal({ history }) {
             }}
             className="form-control"
           />
-
-          {journalDataError.doi && (
-            <p className="text-danger form-text">DOI is Required</p>
-          )}
         </div>
 
         <div className="mb-3">
@@ -317,10 +316,6 @@ export default function AddJournal({ history }) {
           <option value="DOI">DOI</option>
 
         </select>
-
-          {journalDataError.indexing && (
-            <p className="text-danger form-text">Indexing is Required</p>
-          )}
         </div>
 
         <div className="mb-3">

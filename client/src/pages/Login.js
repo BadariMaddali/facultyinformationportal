@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
+import {Helmet} from 'react-helmet';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -50,6 +51,9 @@ function Login() {
   };
   return (
     <div className="loginContainer">
+      <Helmet>
+        <title>Faculty Information Portal</title>
+      </Helmet>
       <h1 style={{ marginBottom: "40px" }}>Faculty Information Portal</h1>
 
       <label>Username:</label>

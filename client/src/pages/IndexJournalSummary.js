@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import ReactToPrint from "react-to-print";
+import {Helmet} from 'react-helmet';
 
 export default function PubsIndexSummary({match}) {
   const componentRef = useRef();
@@ -74,6 +75,9 @@ class PubsSummary extends React.Component {
     const {ieeeCount,springerCount, doiConferences} = conferences;
     return (
       <div>
+        <Helmet>
+          <title>Summary</title>
+        </Helmet>
         <h1 style={{margin:"20px"}} >Summary of Journal Publications</h1>
 
         <h2 className="text-danger form-text">{responseError}</h2>
